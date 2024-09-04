@@ -22,7 +22,7 @@ app.post('/generate', async (req, res) => {
     res.send(response.data);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error generating diagram');
+    res.status(500).send('Error generating diagram', error.message);
   }
 });
 
