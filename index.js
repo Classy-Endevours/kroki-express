@@ -18,7 +18,7 @@ app.post('/generate', async (req, res) => {
     };
 
     const response = await axios.post(`https://kroki.io/mermaid/svg`, payload);
-    res.set('Content-Type', 'image/svg+xml');
+    res.setHeader('Content-Type', 'image/svg+xml');
     res.send(response.data);
   } catch (error) {
     console.error(error);
